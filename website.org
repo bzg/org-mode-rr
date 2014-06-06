@@ -1,0 +1,18 @@
+#+TITLE: A website dedicated to Org / RR ?
+
+The website would provide:
+
+- a list of RR-related feature requests for Org
+
+- a list of Org/Emacs-related tools like:
+  - Babel templates
+  - Emacs configurations
+  - Emacs startup kit for computer scientists
+  - VM with configuration
+
+- Org-mode/RR tutorials
+- org-mode/RR bibliography
+- a discussion list
+
+
+

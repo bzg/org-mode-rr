@@ -1,0 +1,67 @@
+#+TITLE: simgrid-user-days
+
+* Org feature requests
+
+** Aynschronous babel calls
+
+It should be possible to run C-c C-c on a block and have the babel
+call run asynchronously.
+
+** Babel workflow engine
+
+- #+call [block1] [block2] :: call several blocks independantly.  Each
+     block can be called asynchronously since its side-effects are not
+     relevant for running the other code blocks.
+
+- #+run [block1] [block2] :: run [block1] and [block2] *sequentially*.
+     The whole call to #+run can run asynchronously, but all blocks
+     will be called in sequential order and the n block needs to
+     finish before n+1 can start.
+
+- #+map [block] [&rest] :: would map block over a list of data.  We
+     still need to define the format for the "list of data".  The
+     whole call to #+map could run asynchronously.
+
+- #+thread [data] [block1] [block2] :: call block1 with data, then
+     block2 with the output from block1, etc.  (Note that this is
+     similar to -> and ->> in Clojure, but we don't distinguish the
+     two as there is no argument order in babel blocks.)
+
+** Babel workflow browser
+
+The same way that C-c ' on #+TBLFM lines allows to browse the formula
+and see the corresponding references, C-c ' on #+call/map/run would
+allow to see the corresponding blocks.
+
+** Signature and typing?
+
+- Code blocks could describe the types of data they accept, and the
+  type of data they emit.
+
+- An option would make it possible to type-check the data before they
+  are processed.
+
+- If the Babel browser, we could display the signatures as well.
+
+* Org /ad hoc/ tools
+
+** Create a set of better "<" templates
+
+For example: 
+
+<R for
+
+#+BEGIN_SRC R [FIXME: see Arnaud's example]
+#+END_SRC
+
+* General Emacs tools
+
+- An emacs starter kit for experimental computer scientist?
+- Maybe hosting a list of VM with predefined configurations?
+
+* Generic external tools
+
+- Explore Org-mode parser and whether they let anyone use Org Babel
+  outside of Emacs.
+
+

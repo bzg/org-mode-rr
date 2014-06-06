@@ -43,6 +43,11 @@ allow to see the corresponding blocks.
 
 - If the Babel browser, we could display the signatures as well.
 
+** Consistent handling of stderr
+
+For now stderr cannot always be captured in Org buffers, it depends on
+the backend implementation.
+
 * Org /ad hoc/ tools
 
 ** Create a set of better "<" templates

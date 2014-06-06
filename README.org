@@ -1,0 +1,4 @@
+* org-mode-rr
+
+This repository contains some notes about using Org-mode for
+reproducible research.

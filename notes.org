@@ -59,6 +59,11 @@ For example:
 #+BEGIN_SRC R [FIXME: see Arnaud's example]
 #+END_SRC
 
+* Babel feature requests
+
+Inserting comments around snippets of code expanded with noweb:
+http://article.gmane.org/gmane.emacs.orgmode/87472
+
 * General Emacs tools
 
 - An emacs starter kit for experimental computer scientist?

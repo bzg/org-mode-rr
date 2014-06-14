@@ -48,6 +48,36 @@ allow to see the corresponding blocks.
 For now stderr cannot always be captured in Org buffers, it depends on
 the backend implementation.
 
+*** Some ideas for what this would look like
+
+By default, we should integrate stdout and stderr in #+RESULTS for backward compatibility. It could look like for an example with no stderr like this (the same as it did before):
+
+#+BEGIN_EXAMPLE
+#+RESULTS:
+: 5
+#+END_EXAMPLE
+
+If there is output on stderr, we might see
+
+#+BEGIN_EXAMPLE
+#+RESULTS:
+: 5
+
+stderr: 
+Some kind of message
+#+END_EXAMPLE
+
+It might be possible to have a header to split the messages, e.g. :results output :stderr. The stderr could be fontified, e.g. in red to draw attention.
+
+#+BEGIN_EXAMPLE
+#+RESULTS:
+: 5
+
+#+STDERR:
+Some error message
+#+END_EXAMPLE
+
+
 * Org /ad hoc/ tools
 
 ** Create a set of better "<" templates

@@ -119,6 +119,7 @@ Other :
 * Videos about using Org in reproducible research
 
 - [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]
+- [[https://vimeo.com/99167082][Emacs Org-mode Bibtex Screencast]]
 
 * Bibliographic tools
 

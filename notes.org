@@ -50,7 +50,9 @@ the backend implementation.
 
 *** Some ideas for what this would look like
 
-By default, we should integrate stdout and stderr in #+RESULTS for backward compatibility. It could look like for an example with no stderr like this (the same as it did before):
+By default, we should integrate stdout and stderr in #+RESULTS for
+backward compatibility. It could look like for an example with no
+stderr like this (the same as it did before):
 
 #+BEGIN_EXAMPLE
 #+RESULTS:
@@ -67,7 +69,9 @@ stderr:
 Some kind of message
 #+END_EXAMPLE
 
-It might be possible to have a header to split the messages, e.g. :results output :stderr. The stderr could be fontified, e.g. in red to draw attention.
+It might be possible to have a header to split the messages,
+e.g. :results output :stderr. The stderr could be fontified, e.g. in
+red to draw attention.
 
 #+BEGIN_EXAMPLE
 #+RESULTS:
@@ -105,3 +109,6 @@ http://article.gmane.org/gmane.emacs.orgmode/87472
   outside of Emacs.
 
 
+* Templates for journals
+
+- http://orgmode.org/worg/exporters/plos-one-template-worg.html

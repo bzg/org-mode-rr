@@ -120,6 +120,10 @@ Other :
 
 - [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]
 
+* Bibliographic tools
+
+- https://github.com/jkitchin/jmax/blob/master/org-ref.org
+
 * Testimonies
 
 - [[http://mid.gmane.org/F49398B3-C291-498C-9F2A-E1ED8F83723E%2540ur.rochester.edu][Marvin M. Doyley: An Org centric research lab]]

@@ -81,7 +81,6 @@ red to draw attention.
 Some error message
 #+END_EXAMPLE
 
-
 * Org /ad hoc/ tools
 
 ** Create a set of better "<" templates
@@ -112,3 +111,10 @@ http://article.gmane.org/gmane.emacs.orgmode/87472
 * Templates for journals
 
 - http://orgmode.org/worg/exporters/plos-one-template-worg.html
+* Videos about using Org in reproducible research
+
+- [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]
+
+* Testimonies
+
+- [[http://mid.gmane.org/F49398B3-C291-498C-9F2A-E1ED8F83723E%2540ur.rochester.edu][Marvin M. Doyley: An Org centric research lab]]

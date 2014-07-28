@@ -127,4 +127,4 @@ Other :
 
 * Testimonies
 
-- [[http://mid.gmane.org/F49398B3-C291-498C-9F2A-E1ED8F83723E%2540ur.rochester.edu][Marvin M. Doyley: An Org centric research lab]]
+- [[https://lists.gnu.org/archive/html/emacs-orgmode/2014-07/msg00162.html][Marvin M. Doyley: An Org centric research lab]]

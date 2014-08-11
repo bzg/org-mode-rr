@@ -92,6 +92,30 @@ For example:
 #+BEGIN_SRC R [FIXME: see Arnaud's example]
 #+END_SRC
 
+Here are a few of the ones I (JRK) use:
+#+BEGIN_SRC emacs-lisp
+;; add <p for python expansion
+(add-to-list 'org-structure-template-alist
+             '("p" "#+BEGIN_SRC python\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <por for python expansion with raw output
+(add-to-list 'org-structure-template-alist
+             '("por" "#+BEGIN_SRC python :results output raw\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <pv for python expansion with value
+(add-to-list 'org-structure-template-alist
+             '("pv" "#+BEGIN_SRC python :results value\n?\n#+END_SRC" "<src lang=\"python\">\n?\n</src>"))
+
+;; add <el for emacs-lisp expansion
+(add-to-list 'org-structure-template-alist
+             '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC" "<src lang=\"emacs-lisp\">\n?\n</src>"))
+
+;; add <sh for shell
+(add-to-list 'org-structure-template-alist
+             '("sh" "#+BEGIN_SRC sh\n?\n#+END_SRC" "<src lang=\"shell\">\n?\n</src>"))
+#+END_SRC
+
+
 * Babel feature requests
 
 Inserting comments around snippets of code expanded with noweb:

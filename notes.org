@@ -204,7 +204,7 @@ Other :
 
 * Bibliographic tools
 
-- https://github.com/jkitchin/jmax/blob/master/org-ref.org
+- https://github.com/jkitchin/jmax/blob/master/org/org-ref.org
 
 * Testimonies
 

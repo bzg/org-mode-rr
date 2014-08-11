@@ -124,6 +124,9 @@ http://article.gmane.org/gmane.emacs.orgmode/87472
 * General Emacs tools
 
 - An emacs starter kit for experimental computer scientist?
+
+This is a tricky one, although it is the purpose of my jmax starter kit: http://github.com/jkitchin/jmax. I use it with my students for teaching and research. It is not as polished as prelude or the emacs24-starter-kit, but configures org the way I use it, and provides a lot of functionality I like, particularly for scientific publishing and analysis. It is self-contained, even including precompiled emacs for windows. 
+
 - Maybe hosting a list of VM with predefined configurations?
 
 * Generic external tools

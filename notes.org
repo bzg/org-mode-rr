@@ -199,8 +199,6 @@ Other :
 - [[https://vimeo.com/99167082][Emacs Org-mode Bibtex Screencast]]
 - https://www.youtube.com/watch?v=fgizHHd7nOo b. Using org-ref
 
-- http://kitchingroup.cheme.cmu.edu/blog/2014/08/08/What-we-are-using-org-mode-for/
-
 
 * Bibliographic tools
 
@@ -209,3 +207,4 @@ Other :
 * Testimonies
 
 - [[https://lists.gnu.org/archive/html/emacs-orgmode/2014-07/msg00162.html][Marvin M. Doyley: An Org centric research lab]]
+- http://kitchingroup.cheme.cmu.edu/blog/2014/08/08/What-we-are-using-org-mode-for/

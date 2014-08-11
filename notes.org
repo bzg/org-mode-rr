@@ -129,8 +129,7 @@ This is a tricky one, although it is the purpose of my jmax starter kit: http://
 
 - Maybe hosting a list of VM with predefined configurations?
 
-* DONE Generic external tools
-  CLOSED: [2014-08-11 Mon 07:34]
+* Generic external tools
   :PROPERTIES:
   :date:     2014/08/11 07:34:39
   :updated:  2014/08/11 07:34:39

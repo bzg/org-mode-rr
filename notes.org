@@ -143,6 +143,8 @@ Other :
 
 - https://github.com/vikasrawal/orgpaper/blob/master/orgpapers.org
 
+- See https://github.com/jkitchin/jmax/tree/master/examples for examples of APS, ACS, RSC, Elsevier, Springer, etc... I use ox-manuscript (https://github.com/jkitchin/jmax/blob/master/ox-manuscript.el) to export to LaTeX.
+
 * Videos about using Org in reproducible research
 
 - [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]

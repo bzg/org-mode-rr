@@ -129,7 +129,7 @@ This is a tricky one, although it is the purpose of my jmax starter kit: http://
 
 - Maybe hosting a list of VM with predefined configurations?
 
-* Generic external tools
+* COMMENT Generic external tools
 
 - Explore Org-mode parser and whether they let anyone use Org Babel
   outside of Emacs.
@@ -147,21 +147,16 @@ which would make it easy to write shell scripts that could interact with other s
 | 1 | 2 |
 | 4 | 5 |
 
-This code is not so robust, but it illustrates the idea. I use a custom emacs shebang, so there is some funny business dealing with the command line args.
+This code illustrates the idea. 
 
-#+BEGIN_SRC emacs-lisp :tangle org-table.el :shebang #!/Applications/Emacs.app/Contents/MacOS/Emacs -l ~/Dropbox/kitchingroup/jmax/init.el --script
+#+BEGIN_SRC emacs-lisp :tangle org-table.el :shebang #!/Applications/Emacs.app/Contents/MacOS/Emacs --script
 ;; org-table tblname orgfile
-;; print a table from an org-file as a csv
-
-;; these two pops are just to remove the -l library I use in shebang
-(pop command-line-args-left)
-(pop command-line-args-left)
+;; print a table from an org-file as a comma-delimited data to stdout 
 
 (let ((tblname (pop command-line-args-left))
       (org-file (pop command-line-args-left)))
   (find-file org-file)
-  
-  (re-search-forward (format "#\\+tblname:\\s-*%s" tblname))
+  (re-search-forward (format "#\\+tblname:\\s-*%s$" tblname))
   (forward-line) ; to get into table
   (dolist (row (org-table-to-lisp))
     (unless (eq row 'hline)
@@ -171,15 +166,15 @@ This code is not so robust, but it illustrates the idea. I use a custom emacs sh
 
 elisp:org-babel-tangle
 
-Now, we test it:
+Now, we test it by getting out the first column with a classic unix pipe:
 #+BEGIN_SRC sh
-./org-table.el test notes.org
+./org-table.el test notes.org | cut -d , -f 1
 #+END_SRC
 
 #+RESULTS:
-: x,y
-: 1,2
-: 4,5
+: x
+: 1
+: 4
 
 Now we have a command-line command that can extract data from a table, which could be piped elsewhere.
 

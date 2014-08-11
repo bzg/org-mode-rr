@@ -134,6 +134,54 @@ This is a tricky one, although it is the purpose of my jmax starter kit: http://
 - Explore Org-mode parser and whether they let anyone use Org Babel
   outside of Emacs.
 
+I recently learned about 
+#+BEGIN_SRC emacs-lisp
+#!/usr/bin/env emacs --script
+#+END_SRC
+
+which would make it easy to write shell scripts that could interact with other shell scripts more easily. Here is a potential example that extracts data from a table in an org file.
+
+#+tblname: test
+| x | y |
+|---+---|
+| 1 | 2 |
+| 4 | 5 |
+
+This code is not so robust, but it illustrates the idea. I use a custom emacs shebang, so there is some funny business dealing with the command line args.
+
+#+BEGIN_SRC emacs-lisp :tangle org-table.el :shebang #!/Applications/Emacs.app/Contents/MacOS/Emacs -l ~/Dropbox/kitchingroup/jmax/init.el --script
+;; org-table tblname orgfile
+;; print a table from an org-file as a csv
+
+;; these two pops are just to remove the -l library I use in shebang
+(pop command-line-args-left)
+(pop command-line-args-left)
+
+(let ((tblname (pop command-line-args-left))
+      (org-file (pop command-line-args-left)))
+  (find-file org-file)
+  
+  (re-search-forward (format "#\\+tblname:\\s-*%s" tblname))
+  (forward-line) ; to get into table
+  (dolist (row (org-table-to-lisp))
+    (unless (eq row 'hline)
+      (princ (mapconcat 'identity row ","))
+      (princ "\n"))))
+#+END_SRC
+
+elisp:org-babel-tangle
+
+Now, we test it:
+#+BEGIN_SRC sh
+./org-table.el test notes.org
+#+END_SRC
+
+#+RESULTS:
+: x,y
+: 1,2
+: 4,5
+
+Now we have a command-line command that can extract data from a table, which could be piped elsewhere.
 
 * Templates for journals
 

@@ -129,7 +129,12 @@ This is a tricky one, although it is the purpose of my jmax starter kit: http://
 
 - Maybe hosting a list of VM with predefined configurations?
 
-* COMMENT Generic external tools
+* DONE Generic external tools
+  CLOSED: [2014-08-11 Mon 07:34]
+  :PROPERTIES:
+  :date:     2014/08/11 07:34:39
+  :updated:  2014/08/11 07:34:39
+  :END:
 
 - Explore Org-mode parser and whether they let anyone use Org Babel
   outside of Emacs.
@@ -177,6 +182,49 @@ Now, we test it by getting out the first column with a classic unix pipe:
 : 4
 
 Now we have a command-line command that can extract data from a table, which could be piped elsewhere.
+
+Maybe I missed the idea of this section, which was about using org-babel outside of emacs. I think you could call a named code block by a similar method. 
+
+#+BEGIN_SRC emacs-lisp :tangle org-call.el :shebang #!/Applications/Emacs.app/Contents/MacOS/Emacs --script
+;; org-run blockname org-file
+;; run a code block in an org file
+(let ((blockname (pop command-line-args-left))
+      (org-file (pop command-line-args-left)))
+  (find-file org-file)
+  (re-search-forward (format "#\\+name:\\s-*%s$" blockname))
+  (forward-line)
+
+  ;; since we start with a fresh emacs, we have to configure some things.
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)))
+  (let ((org-confirm-babel-evaluate nil))
+    (org-babel-execute-src-block)))
+#+END_SRC
+
+Here is a simple code block.
+#+name: python-block
+#+BEGIN_SRC python
+import time
+with open('results.dat', 'w') as f:
+    f.write(time.asctime())
+#+END_SRC
+
+#+RESULTS: python-block
+: Mon Aug 11 07:43:09 2014
+
+We call it at the command line like this.
+#+BEGIN_SRC sh
+./org-call.el python-block notes.org
+
+# and to see evidence that the file is updated
+cat results.dat
+#+END_SRC
+
+#+RESULTS:
+: Mon Aug 11 07:47:29 2014
+
+This is not a speedy way to run it, but it works! This approach is somewhat limited to side effects. It is not easy to see nice ways to allow variables to be passed in, for example.
 
 * Templates for journals
 

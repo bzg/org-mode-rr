@@ -197,6 +197,10 @@ Other :
 
 - [[https://www.youtube.com/watch?v=1-dUkyn_fZA][Emacs + org-mode + python in reproducible research; SciPy 2013 Presentation]]
 - [[https://vimeo.com/99167082][Emacs Org-mode Bibtex Screencast]]
+- https://www.youtube.com/watch?v=fgizHHd7nOo b. Using org-ref
+
+- http://kitchingroup.cheme.cmu.edu/blog/2014/08/08/What-we-are-using-org-mode-for/
+
 
 * Bibliographic tools
 
